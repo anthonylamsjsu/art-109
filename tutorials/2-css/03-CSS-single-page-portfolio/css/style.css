@@ -165,3 +165,9 @@ footer p {
 .contact-content h2 {
     text-align: center;
 }
+
+.portfolio-content .project-description {
+    font-family: "BLACKBoys Dont Cry", Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    text-align: center;
+}
