@@ -1,0 +1,167 @@
+/* Custom heading font */
+
+@font-face {
+    font-family: "Gibsonton";
+    src: url("../fonts/gibsonton (after Zak Group)_ Boys Don't Cry Font.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Custom description font */
+
+@font-face {
+    font-family: "BLACKBoys Dont Cry";
+    src: url("../fonts/BLACKBoys Dont Cry.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* General CSS */
+
+body {
+    background-color: white;
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.25),
+            rgba(255, 255, 255, 0.25)
+        ),
+        url("../images/FILMBURNBACKGROUND1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: black;
+    font-family: "Gibsonton", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+header {
+    padding: 6rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 10rem;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: normal;
+}
+
+.about-section,
+.portfolio-section,
+.contact-section {
+    margin-bottom: 8rem;
+}
+
+/* Center content containers and all text inside them */
+
+.about-content,
+.portfolio-content,
+.contact-content {
+    max-width: 60rem;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.portfolio-item {
+    margin-bottom: 1rem;
+}
+
+/* Center photos at equal widths without changing proportions */
+
+.portfolio-item img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 .name {
+    display: block;
+    font-size: 11rem;
+}
+
+header h1 .portfolio-title {
+    display: block;
+    font-size: 14rem;
+}
+
+/* ABOUT ME heading */
+
+.about-content h2 {
+    font-size: 8rem;
+}
+
+/* General portfolio headings */
+
+.portfolio-content h2 {
+    font-size: 4rem;
+}
+
+/* NEW YEARS EVE PARTY IN NYC — independent size */
+
+.portfolio-content .project-title {
+    font-size: 4rem;
+}
+
+/* Work titles */
+
+.portfolio-item h3 {
+    font-size: 4rem;
+}
+
+/* About Me paragraph and work descriptions */
+
+.about-content p,
+.portfolio-item p {
+    font-family: "BLACKBoys Dont Cry", Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+}
+
+/* CONTACT ME heading */
+
+.contact-content h2 {
+    font-size: 8rem;
+}
+
+/* Instagram and email */
+
+.contact-content p {
+    font-size: 3rem;
+}
+
+/* Footer font */
+
+@font-face {
+    font-family: "Dirty Stains";
+    src: url("../fonts/DirtyStains-DEMO.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+footer {
+    text-align: center;
+}
+
+footer p {
+    font-family: "Dirty Stains", Arial, Helvetica, sans-serif;
+}
+
+/* Center headings */
+
+.about-content h2,
+.portfolio-content .project-title,
+.contact-content h2 {
+    text-align: center;
+}
