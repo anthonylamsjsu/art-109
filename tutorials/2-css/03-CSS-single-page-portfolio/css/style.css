@@ -172,8 +172,18 @@ footer p {
     text-align: center;
 }
 
+/* Navigation in the top-right corner */
+
+header nav {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    display: flex;
+    gap: 2rem;
+}
+
 /* About, Work, and Contact navigation links */
 
 header nav a {
-    font-size: 4rem;
+    font-size: 2rem;
 }
