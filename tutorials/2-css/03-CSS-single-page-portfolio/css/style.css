@@ -201,8 +201,3 @@ header nav a {
 .contact-content a:focus-visible {
     color: #2731F5;
     text-decoration: none;
-}
-body {
-    background-image: none;
-    background-color: #134A2E;
-}
