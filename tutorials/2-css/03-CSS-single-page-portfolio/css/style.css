@@ -193,12 +193,12 @@ header nav a {
 /* Contact links */
 
 .contact-content a {
-    color: black;
+    color: #ff2b2b;
     text-decoration: none;
 }
 
 .contact-content a:hover,
 .contact-content a:focus-visible {
-    color: #ff2b2b;
+    color: #2731F5;
     text-decoration: none;
 }
