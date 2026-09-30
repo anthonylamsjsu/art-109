@@ -200,5 +200,5 @@ header nav a {
 .contact-content a:hover,
 .contact-content a:focus-visible {
     color: #ffb6d9;
-    text-decoration: underline;
+    text-decoration: none;
 }
