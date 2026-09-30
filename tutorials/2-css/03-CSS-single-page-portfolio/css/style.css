@@ -137,7 +137,7 @@ header h1 .portfolio-title {
 /* Instagram and email */
 
 .contact-content p {
-    font-size: 3rem;
+    font-size: 5rem;
 }
 
 /* Footer font */
@@ -185,7 +185,7 @@ header nav {
 /* About, Work, and Contact navigation links */
 
 header nav a {
-    font-size: 5rem;
+    font-size: 2rem;
     text-decoration: none;
     color: black;
 }
