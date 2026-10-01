@@ -177,9 +177,11 @@ footer p {
 header nav {
     position: absolute;
     top: 2rem;
-    right: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
     display: flex;
-    gap: 2rem;
+    justify-content: space-between;
 }
 
 /* About, Work, and Contact navigation links */
