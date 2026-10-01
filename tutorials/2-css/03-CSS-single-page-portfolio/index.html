@@ -110,80 +110,64 @@
     <footer>
         <p>🅒 2026 ANTHONY LAM</p>
     </footer>
+
     <audio id="background-music" preload="none">
-    <source src="audio/HOLDMYLIQUOR.mp3" type="audio/mpeg">
-</audio>
+        <source src="audio/HOLDMYLIQUOR.mp3" type="audio/mpeg">
+    </audio>
 
-<button id="music-toggle" type="button" hidden>
-    PLAY
-</button>
+    <button id="music-toggle" type="button" aria-label="Play music" hidden>
+        ⏵
+    </button>
 
-<script>
-    const music = document.getElementById("background-music");
-    const musicButton = document.getElementById("music-toggle");
+    <script>
+        const music = document.getElementById("background-music");
+        const musicButton = document.getElementById("music-toggle");
 
-    let audioContext;
-    let starting = false;
+        let starting = false;
 
-    async function startMusic() {
-        if (starting) return;
-        starting = true;
+        async function startMusic() {
+            if (starting) return;
+            starting = true;
 
-        try {
-            if (!audioContext) {
-                audioContext = new AudioContext();
-
-                const source = audioContext.createMediaElementSource(music);
-                const gain = audioContext.createGain();
-
-                gain.gain.value = 1;
-
-                source.connect(gain);
-                gain.connect(audioContext.destination);
+            try {
+                await music.play();
+            } catch (error) {
+                console.error("Music could not start:", error);
+            } finally {
+                starting = false;
             }
-
-            await audioContext.resume();
-            await music.play();
-        } catch (error) {
-            musicButton.textContent = "PLAY";
-        } finally {
-            musicButton.hidden = false;
-            starting = false;
         }
-    }
 
-    function firstInteraction(event) {
-        if (event.target.closest("#music-toggle")) return;
-
-        document.removeEventListener("click", firstInteraction);
-        startMusic();
-    }
-
-    document.addEventListener("click", firstInteraction);
-
-    musicButton.addEventListener("click", () => {
-        if (music.paused) {
+        function firstInteraction(event) {
+            if (event.target.closest("#music-toggle")) return;
             startMusic();
-        } else {
-            music.pause();
         }
-    });
 
-    music.addEventListener("play", () => {
-        musicButton.textContent = "PAUSE";
-        musicButton.setAttribute("aria-label", "Pause music");
-    });
+        document.addEventListener("click", firstInteraction);
 
-    music.addEventListener("pause", () => {
-        musicButton.textContent = "PLAY";
-        musicButton.setAttribute("aria-label", "Play music");
-    });
+        musicButton.addEventListener("click", () => {
+            if (music.paused) {
+                startMusic();
+            } else {
+                music.pause();
+            }
+        });
 
-    music.addEventListener("ended", () => {
-        musicButton.textContent = "PLAY";
-        musicButton.setAttribute("aria-label", "Play music");
-    });
-</script>
+        music.addEventListener("play", () => {
+            document.removeEventListener("click", firstInteraction);
+            musicButton.hidden = false;
+            musicButton.textContent = "⏸";
+            musicButton.setAttribute("aria-label", "Pause music");
+        });
+
+        function showPlaySymbol() {
+            musicButton.textContent = "⏵";
+            musicButton.setAttribute("aria-label", "Play music");
+        }
+
+        music.addEventListener("pause", showPlaySymbol);
+        music.addEventListener("ended", showPlaySymbol);
+    </script>
 </body>
 
 </html>

@@ -230,12 +230,15 @@ header nav a {
         background-position: center;
         background-repeat: no-repeat;
     }
-    /* Music control */
+}
+
+/* Music control — top left */
+
 #music-toggle {
     position: fixed;
     top: 2rem;
-    right: 2rem;
-    left: auto;
+    left: 2rem;
+    right: auto;
     z-index: 9999;
     padding: 0;
     border: none;
@@ -256,6 +259,4 @@ header nav a {
 
 #music-toggle:not([hidden]) {
     display: block;
-}
-   
 }
