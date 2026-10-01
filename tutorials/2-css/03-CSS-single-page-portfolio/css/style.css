@@ -230,4 +230,31 @@ header nav a {
         background-position: center;
         background-repeat: no-repeat;
     }
+    /* Music button — top left */
+#music-toggle {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    z-index: 9999;
+    padding: 0.5rem;
+    border: none;
+    background: transparent;
+    color: black;
+    font-family: "Gibsonton", Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#music-toggle[hidden] {
+    display: none;
+}
+
+#music-toggle:not([hidden]) {
+    display: block;
+}
+
+#music-toggle:hover,
+#music-toggle:focus-visible {
+    color: #ff2b2b;
+}
 }
