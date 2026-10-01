@@ -110,6 +110,80 @@
     <footer>
         <p>🅒 2026 ANTHONY LAM</p>
     </footer>
+    <audio id="background-music" preload="none">
+    <source src="audio/HOLDMYLIQUOR.mp3" type="audio/mpeg">
+</audio>
+
+<button id="music-toggle" type="button" hidden>
+    PLAY
+</button>
+
+<script>
+    const music = document.getElementById("background-music");
+    const musicButton = document.getElementById("music-toggle");
+
+    let audioContext;
+    let starting = false;
+
+    async function startMusic() {
+        if (starting) return;
+        starting = true;
+
+        try {
+            if (!audioContext) {
+                audioContext = new AudioContext();
+
+                const source = audioContext.createMediaElementSource(music);
+                const gain = audioContext.createGain();
+
+                gain.gain.value = 1;
+
+                source.connect(gain);
+                gain.connect(audioContext.destination);
+            }
+
+            await audioContext.resume();
+            await music.play();
+        } catch (error) {
+            musicButton.textContent = "PLAY";
+        } finally {
+            musicButton.hidden = false;
+            starting = false;
+        }
+    }
+
+    function firstInteraction(event) {
+        if (event.target.closest("#music-toggle")) return;
+
+        document.removeEventListener("click", firstInteraction);
+        startMusic();
+    }
+
+    document.addEventListener("click", firstInteraction);
+
+    musicButton.addEventListener("click", () => {
+        if (music.paused) {
+            startMusic();
+        } else {
+            music.pause();
+        }
+    });
+
+    music.addEventListener("play", () => {
+        musicButton.textContent = "PAUSE";
+        musicButton.setAttribute("aria-label", "Pause music");
+    });
+
+    music.addEventListener("pause", () => {
+        musicButton.textContent = "PLAY";
+        musicButton.setAttribute("aria-label", "Play music");
+    });
+
+    music.addEventListener("ended", () => {
+        musicButton.textContent = "PLAY";
+        musicButton.setAttribute("aria-label", "Play music");
+    });
+</script>
 </body>
 
 </html>
