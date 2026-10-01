@@ -202,3 +202,28 @@ header nav a {
     color: #2731F5;
     text-decoration: none;
 }
+/* Background for phones and touch devices */
+@media (hover: none) and (pointer: coarse) {
+    body {
+        background-image: none;
+        isolation: isolate;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+
+        background-image:
+            linear-gradient(
+                rgba(255, 255, 255, 0.25),
+                rgba(255, 255, 255, 0.25)
+            ),
+            url("../images/FILMBURNBACKGROUND1.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
