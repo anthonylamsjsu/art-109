@@ -27,7 +27,7 @@ body {
             rgba(255, 255, 255, 0.25),
             rgba(255, 255, 255, 0.25)
         ),
-        url("../images/FILMBURNBACKGROUND3.jpg");
+        url("../images/FILMBURNBACKGROUND2.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -223,7 +223,7 @@ header nav a {
                 rgba(255, 255, 255, 0.25),
                 rgba(255, 255, 255, 0.25)
             ),
-            url("../images/FILMBURNBACKGROUND3.jpg");
+            url("../images/FILMBURNBACKGROUND2.jpg");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
