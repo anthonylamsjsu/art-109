@@ -156,8 +156,7 @@
         music.addEventListener("play", () => {
             document.removeEventListener("click", firstInteraction);
             musicButton.hidden = false;
-            musicButton.textContent = "⏹";
-            musicButton.setAttribute("aria-label", "Pause music");
+            musicButton.textContent = "\u23F8\uFE0E"; musicButton.setAttribute("aria-label", "Pause music");
         });
 
         function showPlaySymbol() {
