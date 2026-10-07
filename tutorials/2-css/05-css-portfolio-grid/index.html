@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1300, viewport-fit=cover">
+    <title>@ANTHONYLAM PORTFOLIO</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>
+            <span class="name">ANTHONY LAM</span>
+            <span class="portfolio-title">PORTFOLIO</span>
+        </h1>
+
+        <nav aria-label="Main navigation">
+            <a href="#about-section">About</a>
+            <a href="#portfolio-section">Work</a>
+            <a href="#contact-section">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-section" id="about-section">
+            <div class="about-content">
+                <h2>✣ ABOUT ME ✣</h2>
+                <p>I am Anthony Lam, a photographer, graphic designer, creative director, and Digital Media Art student
+                    at San Jose State University. Ive always had a camera in my hand since I was twelve, documenting
+                    everything from skateboarding with friends to cars in a parking lot to countless parties. What
+                    started as capturing moments
+                    with friends became part of my identity as a storyteller through visuals.
+
+                    My work captures everyday moments and the feeling of fleeting youth. I am drawn to the
+                    imperfections, moments where grit and magic meet. Working across photography, video, design, and
+                    creative direction, I aim to create work that feels immediate, expressive, and distinctly human in
+                    an increasingly automated world where imperfection is so often edited away</p>
+            </div>
+        </section>
+
+        <section class="portfolio-section" id="portfolio-section">
+            <div class="portfolio-content">
+                <h2 class="project-title">NEW YEARS EVE PARTY IN NYC</h2>
+
+                <p class="project-description">
+                    Photographed on Fujifilm, this series captures
+                    New Year's Eve in Brooklyn, New York, with The Dare. The warehouse
+                    felt like a steel microwave, packed with hot, sweaty people dancing
+                    feverishly to welcome the new year. I wanted to capture the movement,
+                    chaos, and sense of fleeting youth that filled the room that night
+                </p>
+
+                <div class="portfolio-item">
+                    <img src="images/nye-party-1-fallback.jpg" srcset="images/nye-party-1-640.jpg 640w,
+                                images/nye-party-1-1280.jpg 1280w,
+                                images/nye-party-1-1920.jpg 1920w" sizes="(min-width: 61rem) 60rem, calc(100vw - 1rem)"
+                        alt="">
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="images/nye-party-2-fallback.jpg" srcset="images/nye-party-2-640.jpg 640w,
+                                images/nye-party-2-1280.jpg 1280w,
+                                images/nye-party-2-1920.jpg 1920w" sizes="(min-width: 61rem) 60rem, calc(100vw - 1rem)"
+                        alt="">
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="images/nye-party-3-fallback.jpg" srcset="images/nye-party-3-640.jpg 640w,
+                                images/nye-party-3-1280.jpg 1280w,
+                                images/nye-party-3-1920.jpg 1920w" sizes="(min-width: 61rem) 60rem, calc(100vw - 1rem)"
+                        alt="">
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="images/nye-party-4-fallback.jpg" srcset="images/nye-party-4-640.jpg 640w,
+                                images/nye-party-4-1280.jpg 1280w,
+                                images/nye-party-4-1920.jpg 1920w" sizes="(min-width: 61rem) 60rem, calc(100vw - 1rem)"
+                        alt="">
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="images/nye-party-5-fallback.jpg" srcset="images/nye-party-5-640.jpg 640w,
+                                images/nye-party-5-1280.jpg 1280w,
+                                images/nye-party-5-1920.jpg 1920w" sizes="(min-width: 61rem) 60rem, calc(100vw - 1rem)"
+                        alt="">
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact-section">
+            <div class="contact-content">
+                <h2>CONTACT ME</h2>
+
+                <p>
+                    <a href="https://www.instagram.com/anthonylam/">
+                        ✱ INSTAGRAM ‎ ‎ ‎ anthonylam
+                    </a>
+                </p>
+
+                <p>
+                    <a href="mailto:lanthony.work@gmail.com">
+                        ✱ EMAIL ‎‎ lanthony.work gmail.com
+                    </a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>🅒 2026 ANTHONY LAM</p>
+    </footer>
+
+    <audio id="background-music" preload="none">
+        <source src="audio/HOLDMYLIQUOR.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="music-toggle" type="button" aria-label="Play music" hidden>
+        ⏵
+    </button>
+
+    <script>
+        const music = document.getElementById("background-music");
+        const musicButton = document.getElementById("music-toggle");
+
+        let starting = false;
+
+        async function startMusic() {
+            if (starting) return;
+            starting = true;
+
+            try {
+                await music.play();
+            } catch (error) {
+                console.error("Music could not start:", error);
+            } finally {
+                starting = false;
+            }
+        }
+
+        function firstInteraction(event) {
+            if (event.target.closest("#music-toggle")) return;
+            startMusic();
+        }
+
+        document.addEventListener("click", firstInteraction);
+
+        musicButton.addEventListener("click", () => {
+            if (music.paused) {
+                startMusic();
+            } else {
+                music.pause();
+            }
+        });
+
+        music.addEventListener("play", () => {
+            document.removeEventListener("click", firstInteraction);
+            musicButton.hidden = false;
+            musicButton.textContent = "\u23F8\uFE0E"; musicButton.setAttribute("aria-label", "Pause music");
+        });
+
+        function showPlaySymbol() {
+            musicButton.textContent = "⏵";
+            musicButton.setAttribute("aria-label", "Play music");
+        }
+
+        music.addEventListener("pause", showPlaySymbol);
+        music.addEventListener("ended", showPlaySymbol);
+    </script>
+</body>
+
+</html>
