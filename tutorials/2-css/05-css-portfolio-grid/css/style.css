@@ -84,19 +84,24 @@ h3 {
     box-sizing: border-box;
 }
 
-/* Three-column Flexbox gallery */
+/* Wider, centered Flexbox gallery */
 
 .portfolio-grid {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: min(90vw, 90rem);
+    padding: 1rem;
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
     gap: 1rem;
-    padding: 1rem;
-    width: 100%;
 }
 
-/* Three equal-width items per row, accounting for two gaps */
+/* Three equal-width photos per row */
 
 .portfolio-grid > .portfolio-item {
     flex: 0 0 calc((100% - 2rem) / 3);
@@ -104,7 +109,7 @@ h3 {
     margin: 0;
 }
 
-/* Center photos at equal widths without changing proportions */
+/* Default image sizing */
 
 .portfolio-item img {
     display: block;
@@ -113,6 +118,14 @@ h3 {
     height: auto;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Matching photo frames inside the gallery */
+
+.portfolio-grid > .portfolio-item img {
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    object-position: center;
 }
 
 header h1 .name {
