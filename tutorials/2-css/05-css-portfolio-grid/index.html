@@ -51,39 +51,56 @@
                     chaos, and sense of fleeting youth that filled the room that night
                 </p>
 
-                <div class="portfolio-item">
-                    <img src="images/nye-party-1-fallback.jpg" srcset="images/nye-party-1-640.jpg 640w,
-                                images/nye-party-1-1280.jpg 1280w,
-                                images/nye-party-1-1920.jpg 1920w" sizes="(min-width: 61rem) 60rem, calc(100vw - 1rem)"
-                        alt="">
-                </div>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <img
+                            src="images/nye-party-1-fallback.jpg"
+                            srcset="images/nye-party-1-640.jpg 640w,
+                                    images/nye-party-1-1280.jpg 1280w,
+                                    images/nye-party-1-1920.jpg 1920w"
+                            sizes="(min-width: 61rem) calc(56rem / 3), calc((100vw - 5rem) / 3)"
+                            alt="">
+                    </div>
 
-                <div class="portfolio-item">
-                    <img src="images/nye-party-2-fallback.jpg" srcset="images/nye-party-2-640.jpg 640w,
-                                images/nye-party-2-1280.jpg 1280w,
-                                images/nye-party-2-1920.jpg 1920w" sizes="(min-width: 61rem) 60rem, calc(100vw - 1rem)"
-                        alt="">
-                </div>
+                    <div class="portfolio-item">
+                        <img
+                            src="images/nye-party-2-fallback.jpg"
+                            srcset="images/nye-party-2-640.jpg 640w,
+                                    images/nye-party-2-1280.jpg 1280w,
+                                    images/nye-party-2-1920.jpg 1920w"
+                            sizes="(min-width: 61rem) calc(56rem / 3), calc((100vw - 5rem) / 3)"
+                            alt="">
+                    </div>
 
-                <div class="portfolio-item">
-                    <img src="images/nye-party-3-fallback.jpg" srcset="images/nye-party-3-640.jpg 640w,
-                                images/nye-party-3-1280.jpg 1280w,
-                                images/nye-party-3-1920.jpg 1920w" sizes="(min-width: 61rem) 60rem, calc(100vw - 1rem)"
-                        alt="">
-                </div>
+                    <div class="portfolio-item">
+                        <img
+                            src="images/nye-party-3-fallback.jpg"
+                            srcset="images/nye-party-3-640.jpg 640w,
+                                    images/nye-party-3-1280.jpg 1280w,
+                                    images/nye-party-3-1920.jpg 1920w"
+                            sizes="(min-width: 61rem) calc(56rem / 3), calc((100vw - 5rem) / 3)"
+                            alt="">
+                    </div>
 
-                <div class="portfolio-item">
-                    <img src="images/nye-party-4-fallback.jpg" srcset="images/nye-party-4-640.jpg 640w,
-                                images/nye-party-4-1280.jpg 1280w,
-                                images/nye-party-4-1920.jpg 1920w" sizes="(min-width: 61rem) 60rem, calc(100vw - 1rem)"
-                        alt="">
-                </div>
+                    <div class="portfolio-item">
+                        <img
+                            src="images/nye-party-4-fallback.jpg"
+                            srcset="images/nye-party-4-640.jpg 640w,
+                                    images/nye-party-4-1280.jpg 1280w,
+                                    images/nye-party-4-1920.jpg 1920w"
+                            sizes="(min-width: 61rem) calc(56rem / 3), calc((100vw - 5rem) / 3)"
+                            alt="">
+                    </div>
 
-                <div class="portfolio-item">
-                    <img src="images/nye-party-5-fallback.jpg" srcset="images/nye-party-5-640.jpg 640w,
-                                images/nye-party-5-1280.jpg 1280w,
-                                images/nye-party-5-1920.jpg 1920w" sizes="(min-width: 61rem) 60rem, calc(100vw - 1rem)"
-                        alt="">
+                    <div class="portfolio-item">
+                        <img
+                            src="images/nye-party-5-fallback.jpg"
+                            srcset="images/nye-party-5-640.jpg 640w,
+                                    images/nye-party-5-1280.jpg 1280w,
+                                    images/nye-party-5-1920.jpg 1920w"
+                            sizes="(min-width: 61rem) calc(56rem / 3), calc((100vw - 5rem) / 3)"
+                            alt="">
+                    </div>
                 </div>
             </div>
         </section>
@@ -156,7 +173,8 @@
         music.addEventListener("play", () => {
             document.removeEventListener("click", firstInteraction);
             musicButton.hidden = false;
-            musicButton.textContent = "\u23F8\uFE0E"; musicButton.setAttribute("aria-label", "Pause music");
+            musicButton.textContent = "\u23F8\uFE0E";
+            musicButton.setAttribute("aria-label", "Pause music");
         });
 
         function showPlaySymbol() {
