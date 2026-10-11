@@ -1,3 +1,11 @@
+/* Change box-sizing default to border-box */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
 /* Custom heading font */
 
 @font-face {
