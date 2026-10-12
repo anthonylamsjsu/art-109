@@ -1,10 +1,10 @@
 /* Change box-sizing default to border-box */
+
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
-
 
 /* Custom heading font */
 
@@ -93,8 +93,10 @@ h3 {
 }
 
 /* Wider, centered Flexbox gallery */
+/* Both class names use the same layout */
 
-.portfolio-grid {
+.portfolio-grid,
+.flex-container-grid {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -112,7 +114,8 @@ h3 {
 
 /* Three equal-width photo cards per row */
 
-.portfolio-grid > .portfolio-item {
+.portfolio-grid > .portfolio-item,
+.flex-container-grid > .flex-item-grid {
     flex: 0 0 calc((100% - 2rem) / 3);
     min-width: 0;
     margin: 0;
