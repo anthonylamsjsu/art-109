@@ -18,7 +18,7 @@ function changeButtonText() {
     if (document.body.classList.contains("dark")) {
         changeThemeButton.textContent = "Switch to Light Theme";
     } else {
-        changeThemeButton.textContent = "Switch to Dark Theme";
+        changeThemeButton.textContent = "NIGHT";
     }
 }
 
