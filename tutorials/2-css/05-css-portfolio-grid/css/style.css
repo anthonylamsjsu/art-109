@@ -141,6 +141,14 @@ h3 {
     object-position: center;
 }
 
+/* Show new artworks in full at their original proportions */
+
+.portfolio-grid > .portfolio-item.artwork-item img {
+    aspect-ratio: auto;
+    height: auto;
+    object-fit: contain;
+}
+
 header h1 .name {
     display: block;
     font-size: 11rem;
