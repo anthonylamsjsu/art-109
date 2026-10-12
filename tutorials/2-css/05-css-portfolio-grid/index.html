@@ -6,6 +6,42 @@
     <meta name="viewport" content="width=1300, viewport-fit=cover">
     <title>@ANTHONYLAM PORTFOLIO</title>
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Click to reveal the biography */
+
+        .about-toggle summary {
+            display: inline-block;
+            font-size: 8rem;
+            font-weight: normal;
+            color: #ff2b2b;
+            cursor: pointer;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .about-toggle summary:hover,
+        .about-toggle summary:focus-visible {
+            color: #2731F5;
+        }
+
+        .about-toggle summary::-webkit-details-marker {
+            display: none;
+        }
+
+        /* Make each gallery image a clickable project link */
+
+        .portfolio-grid .project-link {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .portfolio-grid .project-link:focus-visible {
+            outline: 3px solid #2731F5;
+            outline-offset: 5px;
+        }
+    </style>
 </head>
 
 <body>
@@ -25,183 +61,170 @@
     <main>
         <section class="about-section" id="about-section">
             <div class="about-content">
-                <h2>✣ ABOUT ME ✣</h2>
-                <p>I am Anthony Lam, a photographer, graphic designer, creative director, and Digital Media Art student
-                    at San Jose State University. Ive always had a camera in my hand since I was twelve, documenting
-                    everything from skateboarding with friends to cars in a parking lot to countless parties. What
-                    started as capturing moments
-                    with friends became part of my identity as a storyteller through visuals.
+                <details class="about-toggle">
+                    <summary>✱ ABOUT ME</summary>
 
-                    My work captures everyday moments and the feeling of fleeting youth. I am drawn to the
-                    imperfections, moments where grit and magic meet. Working across photography, video, design, and
-                    creative direction, I aim to create work that feels immediate, expressive, and distinctly human in
-                    an increasingly automated world where imperfection is so often edited away</p>
+                    <p>I am Anthony Lam, a photographer, graphic designer, creative director, and Digital Media Art student
+                        at San Jose State University. Ive always had a camera in my hand since I was twelve, documenting
+                        everything from skateboarding with friends to cars in a parking lot to countless parties. What
+                        started as capturing moments
+                        with friends became part of my identity as a storyteller through visuals.
+
+                        My work captures everyday moments and the feeling of fleeting youth. I am drawn to the
+                        imperfections, moments where grit and magic meet. Working across photography, video, design, and
+                        creative direction, I aim to create work that feels immediate, expressive, and distinctly human in
+                        an increasingly automated world where imperfection is so often edited away</p>
+                </details>
             </div>
         </section>
 
-        <section class="portfolio-section" id="portfolio-section">
+        <section class="portfolio-section" id="portfolio-section" aria-label="Portfolio projects">
             <div class="portfolio-content">
-            
-
-
-
                 <div class="portfolio-grid flex-container-grid">
                     <div class="portfolio-item flex-item-grid">
-                        <img src="images/nye-party-2-fallback.jpg" srcset="images/nye-party-2-640.jpg 640w,
-                                    images/nye-party-2-1280.jpg 1280w,
-                                    images/nye-party-2-1920.jpg 1920w" sizes="min(32rem, calc(30vw - 1.333333rem))"
-                            alt="">
-
-                        <!-- Placeholder title and description -->
-                        <h3>NEW YEARS EVE PARTY IN NYC</h3>
-                        <p>Photographed on Fujifilm, this series captures
-                            New Year's Eve in Brooklyn, New York, with The Dare. The warehouse
-                            felt like a steel microwave, packed with hot, sweaty people dancing
-                            feverishly to welcome the new year. I wanted to capture the movement,
-                            chaos, and sense of fleeting youth that filled the room that night
-                        </p>
+                        <a class="project-link" href="nye/index.html"
+                            aria-label="View New Year's Eve Party in NYC project">
+                            <img
+                                src="images/nye-party-2-fallback.jpg"
+                                srcset="images/nye-party-2-640.jpg 640w,
+                                        images/nye-party-2-1280.jpg 1280w,
+                                        images/nye-party-2-1920.jpg 1920w"
+                                sizes="min(32rem, calc(30vw - 1.333333rem))"
+                                alt="Partygoers dancing closely together with a raised arm in the foreground.">
+                        </a>
                     </div>
 
                     <div class="portfolio-item flex-item-grid">
-                        <img src="images/nye-party-1-fallback.jpg" srcset="images/nye-party-1-640.jpg 640w,
-                                    images/nye-party-1-1280.jpg 1280w,
-                                    images/nye-party-1-1920.jpg 1920w" sizes="min(32rem, calc(30vw - 1.333333rem))"
-                            alt="">
-
-                        <!-- Placeholder title and description -->
-                        <h3>NEW YEARS EVE PARTY IN NYC</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-
-
-
-                    <div class="portfolio-item flex-item-grid">
-                        <img src="images/nye-party-3-fallback.jpg" srcset="images/nye-party-3-640.jpg 640w,
-                                    images/nye-party-3-1280.jpg 1280w,
-                                    images/nye-party-3-1920.jpg 1920w" sizes="min(32rem, calc(30vw - 1.333333rem))"
-                            alt="">
-
-                        <!-- Placeholder title and description -->
-                        <h3>NEW YEARS EVE PARTY IN NYC</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a class="project-link" href="nye/index.html"
+                            aria-label="View New Year's Eve Party in NYC project">
+                            <img
+                                src="images/nye-party-1-fallback.jpg"
+                                srcset="images/nye-party-1-640.jpg 640w,
+                                        images/nye-party-1-1280.jpg 1280w,
+                                        images/nye-party-1-1920.jpg 1920w"
+                                sizes="min(32rem, calc(30vw - 1.333333rem))"
+                                alt="Two partygoers wearing sunglasses on a crowded dance floor.">
+                        </a>
                     </div>
 
                     <div class="portfolio-item flex-item-grid">
-                        <img src="images/nye-party-4-fallback.jpg" srcset="images/nye-party-4-640.jpg 640w,
-                                    images/nye-party-4-1280.jpg 1280w,
-                                    images/nye-party-4-1920.jpg 1920w" sizes="min(32rem, calc(30vw - 1.333333rem))"
-                            alt="">
-
-                        <!-- Placeholder title and description -->
-                        <h3>NEW YEARS EVE PARTY IN NYC</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a class="project-link" href="nye/index.html"
+                            aria-label="View New Year's Eve Party in NYC project">
+                            <img
+                                src="images/nye-party-3-fallback.jpg"
+                                srcset="images/nye-party-3-640.jpg 640w,
+                                        images/nye-party-3-1280.jpg 1280w,
+                                        images/nye-party-3-1920.jpg 1920w"
+                                sizes="min(32rem, calc(30vw - 1.333333rem))"
+                                alt="A partygoer in sunglasses and a black jacket surrounded by a dancing crowd.">
+                        </a>
                     </div>
 
                     <div class="portfolio-item flex-item-grid">
-                        <img src="images/nye-party-5-fallback.jpg" srcset="images/nye-party-5-640.jpg 640w,
-                                    images/nye-party-5-1280.jpg 1280w,
-                                    images/nye-party-5-1920.jpg 1920w" sizes="min(32rem, calc(30vw - 1.333333rem))"
-                            alt="">
-
-                        <!-- Placeholder title and description -->
-                        <h3>NEW YEARS EVE PARTY IN NYC</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a class="project-link" href="nye/index.html"
+                            aria-label="View New Year's Eve Party in NYC project">
+                            <img
+                                src="images/nye-party-4-fallback.jpg"
+                                srcset="images/nye-party-4-640.jpg 640w,
+                                        images/nye-party-4-1280.jpg 1280w,
+                                        images/nye-party-4-1920.jpg 1920w"
+                                sizes="min(32rem, calc(30vw - 1.333333rem))"
+                                alt="Hands illuminated by green light in front of partygoers dancing.">
+                        </a>
                     </div>
 
-                    <!-- New artwork -->
-
-
-
-                    <div class="portfolio-item flex-item-grid artwork-item">
-                        <img src="images/SPIRIT%20HOTLINE.jpg"
-                            alt="A person with red hair inside an illuminated phone booth surrounded by darkness.">
-
-                        <h3>SPIRIT HOTLINE</h3>
-                        <!-- Placeholder description -->
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-
-                    <div class="portfolio-item flex-item-grid artwork-item">
-                        <img src="images/MAGIC.jpg"
-                            alt="A hand holding a small flame, illuminated by red and blue light against a dark background.">
-
-                        <h3>MAGIC</h3>
-                        <!-- Placeholder description -->
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <div class="portfolio-item flex-item-grid">
+                        <a class="project-link" href="nye/index.html"
+                            aria-label="View New Year's Eve Party in NYC project">
+                            <img
+                                src="images/nye-party-5-fallback.jpg"
+                                srcset="images/nye-party-5-640.jpg 640w,
+                                        images/nye-party-5-1280.jpg 1280w,
+                                        images/nye-party-5-1920.jpg 1920w"
+                                sizes="min(32rem, calc(30vw - 1.333333rem))"
+                                alt="A crowded dance floor with raised hands and a person wearing sunglasses in the foreground.">
+                        </a>
                     </div>
 
                     <div class="portfolio-item flex-item-grid artwork-item">
-                        <img src="images/MAGIC%20III.jpg"
-                            alt="A silhouetted person in front of bright white, blue, and red fireworks.">
-
-                        <h3>MAGIC III</h3>
-                        <!-- Placeholder description -->
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a class="project-link" href="spirit-hotline/index.html"
+                            aria-label="View Spirit Hotline project">
+                            <img
+                                src="images/SPIRIT%20HOTLINE.jpg"
+                                alt="A person with red hair inside an illuminated phone booth surrounded by darkness.">
+                        </a>
                     </div>
 
                     <div class="portfolio-item flex-item-grid artwork-item">
-                        <img src="images/MAGIC%20II.jpg" alt="Dark silhouettes watching colorful fireworks at night.">
-
-                        <h3>MAGIC II</h3>
-                        <!-- Placeholder description -->
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a class="project-link" href="magic/index.html"
+                            aria-label="View Magic project">
+                            <img
+                                src="images/MAGIC.jpg"
+                                alt="A hand holding a small flame, illuminated by red and blue light against a dark background.">
+                        </a>
                     </div>
 
                     <div class="portfolio-item flex-item-grid artwork-item">
-                        <img src="images/HEATSTROKE.jpg"
-                            alt="A blurred figure illuminated by intense red light in a dark setting.">
-
-                        <h3>HEATSTROKE</h3>
-                        <!-- Placeholder description -->
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a class="project-link" href="magic/index.html"
+                            aria-label="View Magic project">
+                            <img
+                                src="images/MAGIC%20III.jpg"
+                                alt="A silhouetted person in front of bright white, blue, and red fireworks.">
+                        </a>
                     </div>
 
                     <div class="portfolio-item flex-item-grid artwork-item">
-                        <img src="images/FIREBREATHER.jpg"
-                            alt="Close-up of a person holding a smoking roll near their lips outdoors.">
-
-                        <h3>FIREBREATHER</h3>
-                        <!-- Placeholder description -->
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a class="project-link" href="magic/index.html"
+                            aria-label="View Magic project">
+                            <img
+                                src="images/MAGIC%20II.jpg"
+                                alt="Dark silhouettes watching colorful fireworks at night.">
+                        </a>
                     </div>
 
                     <div class="portfolio-item flex-item-grid artwork-item">
-                        <img src="images/CHAMPION%202.jpg"
-                            alt="A person wearing a dark ski mask and hoodie beside a studio light against a pale backdrop.">
-
-                        <h3>CHAMPION II</h3>
-                        <!-- Placeholder description -->
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a class="project-link" href="heatstroke/index.html"
+                            aria-label="View Heatstroke project">
+                            <img
+                                src="images/HEATSTROKE.jpg"
+                                alt="A blurred figure illuminated by intense red light in a dark setting.">
+                        </a>
                     </div>
 
                     <div class="portfolio-item flex-item-grid artwork-item">
-                        <img src="images/CHAMPION%201.jpg"
-                            alt="Black-and-white portrait of a person wearing a ski mask and holding banknotes beside their face.">
-
-                        <h3>CHAMPION</h3>
-                        <!-- Placeholder description -->
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a class="project-link" href="firebreather/index.html"
+                            aria-label="View Firebreather project">
+                            <img
+                                src="images/FIREBREATHER.jpg"
+                                alt="Close-up of a person holding a smoking roll near their lips outdoors.">
+                        </a>
                     </div>
-                    <div class="portfolio-item flex-item-grid artwork-item">
-                        <img src="images/WOLF.jpeg"
-                            alt="Nine-panel illustration of a cartoon wolf in red, blue, black, and white.">
 
-                        <h3>WOLF</h3>
-                        <!-- Placeholder description -->
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <div class="portfolio-item flex-item-grid artwork-item">
+                        <a class="project-link" href="champion/index.html"
+                            aria-label="View Champion project">
+                            <img
+                                src="images/CHAMPION%202.jpg"
+                                alt="A person wearing a dark ski mask and hoodie beside a studio light against a pale backdrop.">
+                        </a>
+                    </div>
+
+                    <div class="portfolio-item flex-item-grid artwork-item">
+                        <a class="project-link" href="champion/index.html"
+                            aria-label="View Champion project">
+                            <img
+                                src="images/CHAMPION%201.jpg"
+                                alt="Black-and-white portrait of a person wearing a ski mask and holding banknotes beside their face.">
+                        </a>
+                    </div>
+
+                    <div class="portfolio-item flex-item-grid artwork-item">
+                        <a class="project-link" href="wolf/index.html"
+                            aria-label="View Wolf project">
+                            <img
+                                src="images/WOLF.jpeg"
+                                alt="Nine-panel illustration of a cartoon wolf in red, blue, black, and white.">
+                        </a>
                     </div>
                 </div>
             </div>

@@ -32,8 +32,9 @@ body {
     background-color: white;
     background-image:
         linear-gradient(
-            rgba(255, 255, 255, 0.10),
-            rgba(255, 255, 255, 0.10)
+            to right,
+            rgba(255, 255, 255, 0.25),
+            rgba(255, 255, 255, 0.08)
         ),
         url("../images/FILMBURNBACKGROUND5ABC.jpg");
     background-size: cover;
@@ -305,7 +306,8 @@ header nav a {
 
         background-image:
             linear-gradient(
-                rgba(255, 255, 255, 0.10),
+                to right,
+                rgba(255, 255, 255, 0.25),
                 rgba(255, 255, 255, 0.10)
             ),
             url("../images/FILMBURNBACKGROUND5AB.jpg");

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1300, viewport-fit=cover">
+    <title>CHAMPION | ANTHONY LAM</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        .project-page {
+            max-width: 75rem;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .project-back {
+            display: inline-block;
+            margin-bottom: 3rem;
+            color: black;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        .project-back:hover,
+        .project-back:focus-visible {
+            color: #2731F5;
+        }
+
+        .project-page h1 {
+            margin: 0 0 2rem;
+            font-size: 15rem;
+            line-height: 1.2;
+        }
+
+        .project-page-description {
+            max-width: 60rem;
+            margin: 0 auto 3rem;
+            font-size: 2rem;
+            line-height: 1.5;
+        }
+
+        .project-description-toggle {
+            margin-bottom: 3rem;
+        }
+
+        .project-description-toggle summary {
+            display: inline-block;
+            color: #ff2b2b;
+            font-size: 2.5rem;
+            cursor: pointer;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .project-description-toggle summary:hover,
+        .project-description-toggle summary:focus-visible {
+            color: #2731F5;
+        }
+
+        .project-description-toggle summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .project-description-toggle .project-page-description {
+            margin: 2rem auto 0;
+        }
+
+        .project-page-images {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .project-page-images img {
+            display: block;
+            width: 100%;
+            max-width: 50rem;
+            height: auto;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="project-page">
+        <a class="project-back" href="../index.html#portfolio-section">
+            ← BACK TO PORTFOLIO
+        </a>
+
+        <h1>CHAMPION</h1>
+
+        <details class="project-description-toggle">
+            <summary>✱ READ MORE</summary>
+
+            <!-- Placeholder description: replace with your project description -->
+            <p class="project-page-description">
+                CHAMPION explores the image of success and grit. Money held close. The studio light left in view. Moving
+                between confidence and uncertainty. Grain and harsh light give the photographs a raw analog feeling.
+            </p>
+        </details>
+
+        <div class="project-page-images">
+            <img src="../images/CHAMPION%201.jpg"
+                alt="Black-and-white portrait of a person wearing a ski mask and holding banknotes beside their face.">
+
+            <img src="../images/CHAMPION%202.jpg"
+                alt="A person wearing a dark ski mask and hoodie beside a studio light against a pale backdrop."
+                loading="lazy">
+        </div>
+    </main>
+
+    <footer>
+        <p>🅒 2026 ANTHONY LAM</p>
+    </footer>
+
+    <audio id="background-music" preload="none">
+        <source src="../audio/HOLDMYLIQUOR.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="music-toggle" type="button" aria-label="Play music" hidden>
+        ⏵
+    </button>
+
+    <script>
+        const music = document.getElementById("background-music");
+        const musicButton = document.getElementById("music-toggle");
+
+        let starting = false;
+
+        async function startMusic() {
+            if (starting) return;
+            starting = true;
+
+            try {
+                await music.play();
+            } catch (error) {
+                console.error("Music could not start:", error);
+            } finally {
+                starting = false;
+            }
+        }
+
+        function firstInteraction(event) {
+            if (event.target.closest("#music-toggle")) return;
+            startMusic();
+        }
+
+        document.addEventListener("click", firstInteraction);
+
+        musicButton.addEventListener("click", () => {
+            if (music.paused) {
+                startMusic();
+            } else {
+                music.pause();
+            }
+        });
+
+        music.addEventListener("play", () => {
+            document.removeEventListener("click", firstInteraction);
+            musicButton.hidden = false;
+            musicButton.textContent = "\u23F8\uFE0E";
+            musicButton.setAttribute("aria-label", "Pause music");
+        });
+
+        function showPlaySymbol() {
+            musicButton.textContent = "⏵";
+            musicButton.setAttribute("aria-label", "Play music");
+        }
+
+        music.addEventListener("pause", showPlaySymbol);
+        music.addEventListener("ended", showPlaySymbol);
+    </script>
+</body>
+
+</html>

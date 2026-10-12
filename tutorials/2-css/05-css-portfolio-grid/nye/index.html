@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1300, viewport-fit=cover">
+    <title>NEW YEARS EVE PARTY IN NYC | ANTHONY LAM</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        .project-page {
+            max-width: 75rem;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .project-back {
+            display: inline-block;
+            margin-bottom: 3rem;
+            color: black;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        .project-back:hover,
+        .project-back:focus-visible {
+            color: #2731F5;
+        }
+
+        .project-page h1 {
+            margin: 0 0 2rem;
+            font-size: 4.8rem;
+            line-height: 1.2;
+        }
+
+        .project-page-description {
+            max-width: 60rem;
+            margin: 0 auto 3rem;
+            font-size: 2rem;
+            line-height: 1.5;
+        }
+
+        .project-description-toggle {
+            margin-bottom: 3rem;
+        }
+
+        .project-description-toggle summary {
+            display: inline-block;
+            color: #ff2b2b;
+            font-size: 2.5rem;
+            cursor: pointer;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .project-description-toggle summary:hover,
+        .project-description-toggle summary:focus-visible {
+            color: #2731F5;
+        }
+
+        .project-description-toggle summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .project-description-toggle .project-page-description {
+            margin: 2rem auto 0;
+        }
+
+        .project-page-images {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .project-page-images img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="project-page">
+        <a class="project-back" href="../index.html#portfolio-section">
+            ← BACK TO PORTFOLIO
+        </a>
+
+        <h1>NEW YEARS EVE PARTY IN NYC</h1>
+
+        <details class="project-description-toggle">
+            <summary>✱ READ MORE</summary>
+
+            <p class="project-page-description">
+                Photographed on Fujifilm. This series captures New Year's Eve in Brooklyn with The Dare. The warehouse
+                felt like a steel microwave. Packed with hot and sweaty people dancing feverishly to welcome the new
+                year. I wanted to capture the chaos of the night. The movement. The feeling of fleeting youth that
+                filled the room. Strangers pressed together as the hours disappeared. A moment that felt endless while
+                it was happening.
+            </p>
+        </details>
+
+        <div class="project-page-images">
+            <img src="../images/nye-party-2-fallback.jpg" srcset="../images/nye-party-2-640.jpg 640w,
+                        ../images/nye-party-2-1280.jpg 1280w,
+                        ../images/nye-party-2-1920.jpg 1920w"
+                sizes="(min-width: 75rem) 71rem, calc(100vw - 4rem - 16px)"
+                alt="Partygoers dancing closely together, with a raised arm in the foreground.">
+
+            <img src="../images/nye-party-1-fallback.jpg" srcset="../images/nye-party-1-640.jpg 640w,
+                        ../images/nye-party-1-1280.jpg 1280w,
+                        ../images/nye-party-1-1920.jpg 1920w"
+                sizes="(min-width: 75rem) 71rem, calc(100vw - 4rem - 16px)"
+                alt="Two partygoers wearing sunglasses in a crowded dance floor." loading="lazy">
+
+            <img src="../images/nye-party-3-fallback.jpg" srcset="../images/nye-party-3-640.jpg 640w,
+                        ../images/nye-party-3-1280.jpg 1280w,
+                        ../images/nye-party-3-1920.jpg 1920w"
+                sizes="(min-width: 75rem) 71rem, calc(100vw - 4rem - 16px)"
+                alt="A partygoer in sunglasses and a black jacket surrounded by a dancing crowd." loading="lazy">
+
+            <img src="../images/nye-party-4-fallback.jpg" srcset="../images/nye-party-4-640.jpg 640w,
+                        ../images/nye-party-4-1280.jpg 1280w,
+                        ../images/nye-party-4-1920.jpg 1920w"
+                sizes="(min-width: 75rem) 71rem, calc(100vw - 4rem - 16px)"
+                alt="Hands illuminated by green light in front of partygoers dancing." loading="lazy">
+
+            <img src="../images/nye-party-5-fallback.jpg" srcset="../images/nye-party-5-640.jpg 640w,
+                        ../images/nye-party-5-1280.jpg 1280w,
+                        ../images/nye-party-5-1920.jpg 1920w"
+                sizes="(min-width: 75rem) 71rem, calc(100vw - 4rem - 16px)"
+                alt="A crowded New Year's Eve dance floor with raised hands and a person wearing sunglasses in the foreground."
+                loading="lazy">
+        </div>
+    </main>
+
+    <footer>
+        <p>🅒 2026 ANTHONY LAM</p>
+    </footer>
+
+    <audio id="background-music" preload="none">
+        <source src="../audio/HOLDMYLIQUOR.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="music-toggle" type="button" aria-label="Play music" hidden>
+        ⏵
+    </button>
+
+    <script>
+        const music = document.getElementById("background-music");
+        const musicButton = document.getElementById("music-toggle");
+
+        let starting = false;
+
+        async function startMusic() {
+            if (starting) return;
+            starting = true;
+
+            try {
+                await music.play();
+            } catch (error) {
+                console.error("Music could not start:", error);
+            } finally {
+                starting = false;
+            }
+        }
+
+        function firstInteraction(event) {
+            if (event.target.closest("#music-toggle")) return;
+            startMusic();
+        }
+
+        document.addEventListener("click", firstInteraction);
+
+        musicButton.addEventListener("click", () => {
+            if (music.paused) {
+                startMusic();
+            } else {
+                music.pause();
+            }
+        });
+
+        music.addEventListener("play", () => {
+            document.removeEventListener("click", firstInteraction);
+            musicButton.hidden = false;
+            musicButton.textContent = "\u23F8\uFE0E";
+            musicButton.setAttribute("aria-label", "Pause music");
+        });
+
+        function showPlaySymbol() {
+            musicButton.textContent = "⏵";
+            musicButton.setAttribute("aria-label", "Play music");
+        }
+
+        music.addEventListener("pause", showPlaySymbol);
+        music.addEventListener("ended", showPlaySymbol);
+    </script>
+</body>
+
+</html>
