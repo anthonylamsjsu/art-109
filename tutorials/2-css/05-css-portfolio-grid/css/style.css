@@ -134,20 +134,14 @@ h3 {
     margin-right: auto;
 }
 
-/* Matching photo frames inside the gallery */
+/* Matching square previews on the main portfolio page */
 
 .portfolio-grid > .portfolio-item img {
-    aspect-ratio: 3 / 2;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     object-position: center;
-}
-
-/* Show new artworks in full at their original proportions */
-
-.portfolio-grid > .portfolio-item.artwork-item img {
-    aspect-ratio: auto;
-    height: auto;
-    object-fit: contain;
 }
 
 header h1 .name {
